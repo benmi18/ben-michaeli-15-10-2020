@@ -1,0 +1,8 @@
+<div
+  class="weather-card"
+  *ngFor="let favorite of favorites$ | async"
+  routerLink="/home"
+  (click)="onFavoriteCardClick(favorite)"
+>
+  <app-weather-card [page]="pageEnum.FAVORITES" [city]="favorite"></app-weather-card>
+</div>

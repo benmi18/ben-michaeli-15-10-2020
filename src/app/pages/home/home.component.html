@@ -1,0 +1,13 @@
+<div class="container">
+  <mat-form-field class="search-field">
+    <mat-label>Search city</mat-label>
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" (keypress)="onSearchKeyDown($event)">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onCitySelect($event)">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option.LocalizedName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <app-forecasts-card [forecast]="forecast" [currentConditions]="currentConditions" [selectedCity]="selectedCity"></app-forecasts-card>
+</div>

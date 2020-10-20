@@ -1,0 +1,24 @@
+<mat-toolbar class="custom-toolbar-space-between">
+  <span>Herolo Weather App</span>
+
+  <div class="desktop-links">
+    <mat-button-toggle-group [value]="currentPage" name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle routerLink="/home" value="home">Home</mat-button-toggle>
+      <mat-button-toggle routerLink="/favorites" value="favorites">Favorites</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div class="mobile-links">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button routerLink="/home" mat-menu-item>
+        <span>Home</span>
+      </button>
+      <button routerLink="/favorites" mat-menu-item>
+        <span>Favorites</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
